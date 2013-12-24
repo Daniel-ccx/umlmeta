@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{.Title}}
+        </title>
+        <link href="/css/common.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+        <h1>{{.Title}}</h1>
+        </header>
+        <div class="login_main">
+            <div class="login_tit">
+                <h1>login panel</h1>
+            </div>
+            <div class="login_panel">
+                <form action="" method="post">
+                    <div class="login_ele">User: <input class="ele_ipt" type="email" name="email" value="" placeholder="email"/></div>
+                    <div class="login_ele">Pass: <input class="ele_ipt" type="password" name="pass" value="" placeholder="passcode"/></div>
+                    <div id="error_msg" class="login_ele"></div>
+                    <div class="login_ele"><span>UML Meta for power</span><input type="submit" class="ele_btn lt" name="submit" value="Submit"/></div>
+                </form>
+                <div class="login_shadow">
+                    UML META
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="copyright">Powered by faithsmine@gmail.com &copy; 2013 - 2014</div>
+        </footer>
+    </body>
+</html>

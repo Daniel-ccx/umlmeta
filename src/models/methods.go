@@ -4,11 +4,19 @@ import (
     "bufio"
     "flag"
     "regexp"
-//   "log"
+    "log"
     "strings"
     "os"
     "fmt"
+    "net/http"
 )
+func CheckLogin(w http.ResponseWriter, r *http.Request) {
+    cookie, err := r.Cookie("_admin_")
+    log.Println(cookie, err)
+    if cookie.Value == "" {
+        http.Redirect(w, r, "/login/", http.StatusFound)
+    }
+}
 /**
  * 加载并解析配置文件设置
  */
