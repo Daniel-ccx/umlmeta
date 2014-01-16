@@ -29,12 +29,12 @@ func (this *HomeController) HomeAction(w http.ResponseWriter, r *http.Request) {
 }
 
 func (this *HomeController) LoginAction(w http.ResponseWriter, r *http.Request) {
-    log.Println("home/login")
     if r.Method == "POST" {
         email := r.FormValue("email")
         pass := r.FormValue("pass")
-        log.Println("pass:", pass)
-        cookie := http.Cookie{Name:"_admin_", Value: email, Path: "/", HttpOnly: true, Secure: true, MaxAge: 1000}
+        log.Println("pass:", pass, email)
+        md5CV := models.Md5Crypt(email, pass, email, "u")
+        cookie := http.Cookie{Name:"_admin_", Value: md5CV, Path: "/", HttpOnly: true, Secure: false, MaxAge: 1000000000000}
         http.SetCookie(w, &cookie)
         http.Redirect(w, r, "/", http.StatusFound)
     }
