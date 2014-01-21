@@ -7,10 +7,11 @@ footer div.copyright { float:left; width: 100%; padding-top: 5px; font-weight: b
 .login_main { width: 600px; height: 360px; margin: 200px auto; background-color: #fef; border-radius: 15px 15px 15px 15px;}
 .login_tit { width: 600px; height: 36px; margin: 0px auto; text-align:center; padding-top: 10px; padding-bottom: 20px;} 
 .login_panel { width: 600px; height: 300px; margin: 0px auto;}
-.login_ele { width: 360px; height: 30px; margin: 5px auto; font-size: 14px;}
+.login_ele { width: 360px; height: 30px; line-height:30px; margin: 5px auto; font-size: 14px;}
 
-.ele_ipt { width:260px; height: 28px; border: 1px solid #4BB848; border-radius: 3px;}
+.ele_ipt { width:260px; height: 28px; border: 1px solid #4BB848; border-radius: 3px; text-indent: 5px;}
 .ele_btn { width: 100px; height: 24px; }
 .lt {float:right; margin-right:60px;}
+#error_msg{color: #E7433C; text-indent: 30px;}
 .login_shadow { font-weight: bold; font-size: 24px; width: 500px; height: 48px; margin: 0px auto; padding-top: 25px; padding-bottom: 10px; text-shadow: 7px 5px 6px #24498B; color: #647766; text-outline: 2px 2px #ff0; text-align:center; }
 

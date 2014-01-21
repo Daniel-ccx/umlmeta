@@ -10,25 +10,41 @@ import (
     "os"
     "net/http"
 )
+//返回错误model
+/*
+func ErrModel(msg string, eleId = "errorMsg") (errModel map[string] string){
+    errModel = make(map[string] string)
+    errModel["msg"] = msg
+    errModel["eleId"] = eleId
+    return
+}
+*/
 func CheckLogin(w http.ResponseWriter, r *http.Request) {
     cookie, err := r.Cookie("_admin_")
+        //已授权用户
     realUsers := ParseAuthUser()
-    if err != nil || cookie.Value == "" || authUser(realUsers, cookie.Value) == false {
+    log.Println("\ntest\n")
+    log.Println(cookie)
+    log.Println(realUsers)
+    log.Println("\ntest100\n")
+    if err != nil || cookie.Value == "" || AuthUser(realUsers, cookie.Value) == false {
         http.Redirect(w, r, "/login/", http.StatusFound)
     }
 
     //解析r.Referer()，非登录url则转入，否则进入home
+    /*
     refer := r.Referer()
     if strings.Count(refer, "/login/") > 0 {
         http.Redirect(w, r, "/home/", http.StatusFound)
     }
     http.Redirect(w, r, r.Referer(), http.StatusFound)
+    */
 }
 
 /**
  * 验证用户
  */
-func authUser(realUsers map[string] string, md5CV string) (flag bool) {
+func AuthUser(realUsers map[string] string, md5CV string) (flag bool) {
     flag = false
     userStr := realUsers[md5CV]
     if len(userStr) > 5 {

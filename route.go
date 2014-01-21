@@ -43,6 +43,8 @@ func adminHandler(w http.ResponseWriter, r *http.Request) {
 //登录
 func loginHandler(w http.ResponseWriter, r *http.Request) {
     log.Println(r.URL.Path)
+    log.Println("abc")
+
     controllerObj := &controller.HomeController{}
     controller := reflect.ValueOf(controllerObj)
     method := controller.MethodByName("LoginAction")
