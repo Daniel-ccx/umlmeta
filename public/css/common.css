@@ -10,6 +10,8 @@ footer div.copyright { float:left; width: 100%; padding-top: 5px; font-weight: b
 .login_ele { width: 360px; height: 30px; line-height:30px; margin: 5px auto; font-size: 14px;}
 
 .ele_ipt { width:260px; height: 28px; border: 1px solid #4BB848; border-radius: 3px; text-indent: 5px;}
+.ele_ipt_cap { width:80px; height: 28px; border: 1px solid #4BB848; border-radius: 3px; text-indent: 5px;}
+.cpatcha { width: 80px; height: 24px; }
 .ele_btn { width: 100px; height: 24px; }
 .lt {float:right; margin-right:60px;}
 #error_msg{color: #E7433C; text-indent: 30px;}

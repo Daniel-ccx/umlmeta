@@ -18,6 +18,9 @@
                 <form action="" method="post">
                     <div class="login_ele">User: <input class="ele_ipt" type="email" name="email" value="" placeholder="email"/></div>
                     <div class="login_ele">Pass: <input class="ele_ipt" type="password" name="pass" value="" placeholder="passcode"/></div>
+                    <div class="login_ele">Capt: <input class="ele_ipt_cap" type="text" name="captcha" value="" placeholder="验证码"/>
+                            <span><img src="" class="captcha"></span>
+                    </div>
                     <div id="error_msg" class="login_ele">{{.ErrMsg}}</div>
                     <div class="login_ele"><span>UML Meta for power</span><input type="submit" class="ele_btn lt" name="submit" value="Submit"/></div>
                 </form>
